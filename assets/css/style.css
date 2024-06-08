@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #FFB900;
+    --font-heading: "Sen", sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Common "Class dùng chung" */
+.main-content {
+    width: 1170px;
+    max-width: calc(100% - 48px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    color: #fff;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    border-radius: 999px;
+    background: #171100;
+    /* padding: 11px 41px; */
+    display: inline-block;
+    line-height: 50px;
+    /* height: 50px; */
+    min-width: 118px;
+}
+
+.hero .btn:hover {
+    opacity: 0.9;
+    box-shadow: 1px 1px 8px var(--primary-color);
+}
+
+/* Header */
+.header {
+    background: #fffcf4;
+}
+
+.header.fixed {
+    position: sticky;
+    top: -28px;
+    z-index: 1;
+}
+.header .body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 36px 0 8px;
+}
+
+.nav {
+    margin-left: auto;
+}
+.nav ul {
+    display: flex;
+}
+
+.nav a {
+    color: #5f5b53;
+    font-size: 1.6rem;
+    padding: 8px 21px;
+}
+
+.nav a:hover,
+.nav li.active a {
+    color: #000000;
+    font-size: 1.6rem;
+    /* font-weight: 600; */
+    text-shadow: 1px 0 0 currentColor;
+    position: relative;
+}
+
+.nav li.active a::after {
+    content: "";
+    width: 12px;
+    height: 2px;
+    border-radius: 1px;
+    background: #171100;
+    display: block;
+    position: absolute;
+    left: 21px;
+    bottom: 6px;
+}
+
+.header .sign-up-btn {
+    width: 144px;
+}
+
+.header .action {
+    margin-left: 49px;
+}
+
+/* Hero */
+
+.hero {
+    background: #fffcf4;
+}
+.hero .body {
+    display: flex;
+    padding-top: 56px;
+}
+
+/* Hero left */
+.hero .media-block {
+    width: 48%;
+    position: relative;
+}
+
+
+.hero .hero-summary {
+    position: absolute;
+    right: 0;
+    bottom: 48px;
+    width: 270px;
+    padding: 24px;
+    border-radius: 12px;
+    background: #fff;
+    /* box-shadow: 0px 16px 32px 0px rgba(0, 0, 0, 0.05); */
+    box-shadow: 1px 1px 8px var(--primary-color);
+}
+
+.hero .media-block .img {
+    width: 470px;
+    height: 685px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.hero-summary .item {
+    display: flex;
+    align-items: center;
+}
+
+.hero-summary .item + .item {
+    margin-top: 22px;
+}
+.hero-summary .icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff9e8;
+}
+
+.hero-summary .info {
+    margin-left: 16px;
+}
+
+.hero-summary .label {
+    color: #5f5b53;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.86; 185.714%
+}
+
+.hero-summary .title {
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67; 166.667%
+}
+
+/* Hero right */
+.hero .content-block {
+    width: 52%;
+}
+
+.hero .content-block {
+    padding: 64px 0 0 130px;
+}
+
+.hero .heading {
+    color: #171100;
+    font-family: var(--font-heading);
+    font-size: 5.8rem;
+    font-weight: 700;
+    line-height: 1.17; /* 117.241% */
+    letter-spacing: -1.16px;
+}
+
+.hero .desc{
+    color: #5F5B53;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67; /* 166.667% */
+    margin-top: 22px;
+}
+
+.hero .cta-group {
+    display: flex;
+    align-items: center;
+    margin: 38px 0 48px 0;
+ }
+
+.hero .hero-cta {
+    width: 180px;
+    line-height: 64px;
+    background: var(--primary-color);
+}
+
+.hero .watch-video {
+    display: flex;
+    border: none;
+    background: transparent;
+    margin-left: 28px;
+    cursor: pointer;
+}
+
+.hero .watch-video .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero .watch-video span {
+    color: #171100;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67; /* 166.667% */
+    margin-left: 14px;
+}
+
+.hero .stats {
+    margin-left: -28px;
+}
+
+.hero .stats strong {
+    font-family: var(--font-heading);
+    padding: 0 8px 0 28px;
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 54px;
+    text-align: left;
+    color: #171100;
+}
+

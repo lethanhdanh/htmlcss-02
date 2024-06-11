@@ -17,6 +17,21 @@ body {
 }
 
 /* Common "Class dùng chung" */
+
+.work-break-all {
+    word-break: break-all;
+}
+.line-clamp {
+    display: -webkit-box;
+    -webkit-line-clamp: var(--line-clamp, 1);
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp.line-2 {
+    --line-clamp: 2;
+}
+
 .main-content {
     width: 1170px;
     max-width: calc(100% - 48px);
@@ -40,7 +55,29 @@ a {
     line-height: 50px;
     /* height: 50px; */
     min-width: 118px;
+    cursor: pointer;
 }
+
+.heading {
+    color: #171100;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -1.16px;
+}
+
+.heading.lv1 {
+    font-size: 5.8rem;
+    line-height: 1.17; /* 117.241% */
+}
+
+.heading.lv2 {
+    font-size: 3.8rem;
+    line-height: 1.26;
+    /* indentical to box height, or 126% = 48px */
+    letter-spacing: -0.02em;
+       
+}
+
 
 .hero .btn:hover {
     opacity: 0.9;
@@ -113,7 +150,7 @@ a {
 }
 .hero .body {
     display: flex;
-    padding-top: 56px;
+    padding: 56px 0 65px;
 }
 
 /* Hero left */
@@ -121,6 +158,16 @@ a {
     width: 48%;
     position: relative;
 }
+
+/* GHI CHU:
+    - Thẻ Inline hoặc Inline-block được thiết kế để hiện thị nội dung inline (thường là nội dung chữ)
+    - Mặc định chữ căn theo đường baseline (đường cơ sở), bên dưới đường baseline dư ra khoảng trắng để hiện thử các chữ có phần dư chọc xuống
+    - Thẻ IMG vẫn lả thẻ inline hay thẻ inline-block vẫn có phần dư để phục vụ việc hiển thị chân chữ.
+    - Để loại bỏ có 02 cách:
+        + vertical-align: bottom
+        + display: block;
+
+*/
 
 
 .hero .hero-summary {
@@ -140,6 +187,11 @@ a {
     height: 685px;
     object-fit: cover;
     border-radius: 20px;
+    /* Xóa bỏ khoảng dư cho thẻ IMG (có thuộc tính inline */
+    /* Cách 1 */
+    vertical-align: bottom;
+    /* Cách 2 */
+    /* display: block; */
 }
 
 .hero-summary .item {
@@ -181,19 +233,7 @@ a {
 /* Hero right */
 .hero .content-block {
     width: 52%;
-}
-
-.hero .content-block {
     padding: 64px 0 0 130px;
-}
-
-.hero .heading {
-    color: #171100;
-    font-family: var(--font-heading);
-    font-size: 5.8rem;
-    font-weight: 700;
-    line-height: 1.17; /* 117.241% */
-    letter-spacing: -1.16px;
 }
 
 .hero .desc{
@@ -254,3 +294,209 @@ a {
     color: #171100;
 }
 
+/* Popular */
+
+.popular {
+    padding: 65px 0;
+    margin-top: 135px;
+}
+
+.popular-top .desc {
+    margin-top: 16px;
+    width: 458px;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 1.67;
+    /* indentical to box height, or 167% = 30px */
+    color: #5F5B53;
+}
+
+.popular-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Căn giữa cũng có thể sử dụng margin-left: auto
+.popular-top .control {
+    margin-left: auto;
+} */
+
+.popular-top .control {
+    display: flex;
+    gap: 18px;
+}
+
+.popular-top .control-btn {
+    background: transparent;
+    border:  1px solid var(--primary-color);
+    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.popular-top .control-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* popular course list */
+.popular .courses-list {
+    margin-top: 55px;
+    display: flex;
+    gap: 30px;
+}
+
+.popular .course-item {
+    flex: 1;
+    gap: 0px;
+    border-radius: 12px;
+    border: 1px solid #E2DFDA;
+}
+
+.popular .course-item:hover {
+    border-color: transparent;
+    box-shadow: 1px 1px 8px var(--primary-color);
+}
+
+.popular .course-item .thumb {
+    width: calc(100%+2px)
+    border-radius: 12px 12px 0px 0px;
+    height: 278px;
+    object-fit: cover;
+    margin: -1px;
+}
+
+.popular .course-item .thumb:hover {
+    opacity: 0.8;
+}
+
+.popular .course-item .info {
+    padding: 16px 22px 22px;
+}
+
+.popular .course-item .rating,
+.popular .course-item .foot,
+.popular .course-item .head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popular .course-item .title a {
+    padding-right: 6px;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67;
+    color: #171100;
+}
+
+.popular .rating .value {
+    margin-left: 6px;
+}
+
+.popular .course-item .desc {
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 26px;
+    margin-top: 6px;
+    /* line-height 26px = 1.86 */
+}
+
+.popular .course-item .foot {
+    margin-top: 12px;
+}
+
+.popular .course-item .price {
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: 1.67;
+    /* 30px = line-height: 167%  */
+    color: #171100;
+}
+
+.popular .course-item .book-btn {
+    border: none;
+ }
+
+ .popular .course-item .book-btn:hover {
+    color: #fff;
+    background-color: #FFB900;
+ }
+
+ /* Feedback */
+ .feedback {
+    margin-top: 135px;
+    padding: 96px 0;
+    background: #2E2100;
+ }
+
+ .feedback .feedback-item {
+    display: flex;
+ }
+
+ .feedback-item .avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+ }
+
+ .feedback-item .info .title {
+    font-family: var(--font-heading);
+    margin-top: 18px;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 34px;
+    /* line-height:34px = 1.42 */
+    color: #F7F7F7;
+ }
+
+ .feedback-item .info .desc {
+    margin-top: 4px;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+    color: #BFBCB2;
+ }
+
+ .feedback-item .info .dots {
+    display: flex;
+    margin-top: 28px;
+
+}
+
+ .feedback-item .info .dot {
+    cursor: pointer;
+    margin-right: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #634700;
+ }
+
+ .feedback-item .info .dot.active {
+    background: #FFB900;
+    cursor: default;
+ }
+
+ .feedback-item .content {
+    width: 66%;
+    margin-left: auto;
+ }
+
+ .feedback-item blockquote {
+    margin-left: 30px;
+    font-size: 2.6rem;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.54;
+    color: #fff;
+ }
